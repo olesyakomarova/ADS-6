@@ -39,7 +39,7 @@ class TPQueue {
       TAIL -= MAXsize + 1;
     }
   }
- 
+
   const T& pop() {
     counter--;
     if (HEAD > MAXsize) {
@@ -52,15 +52,15 @@ class TPQueue {
     assert(count > 0);
     return items[HEAD];
   }
-  
+
   bool isEmpty() const {
     return counter == 0;
   }
-  
+
   bool isFull() const {
     return counter == MAXsize;
   }
-  
+
   ~TPQueue() {
     delete[] items;
   }
