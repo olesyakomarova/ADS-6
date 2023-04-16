@@ -10,12 +10,12 @@ class TPQueue {
   int MAXsize;
   int HEAD, TAIL;
   int counter;
-  
+
  public:
   TPQueue(): MAXsize(size), HEAD(0), TAIL(0), counter(0) {
     items = new T[MAXsize + 1];
   }
-  
+
   void push(const T& item) {
     if (counter == 0) {
       items[TAIL++] = item;
@@ -39,7 +39,7 @@ class TPQueue {
       TAIL -= MAXsize + 1;
     }
   }
-  
+
   const T& pop() {
     counter--;
     if (HEAD > MAXsize) {
@@ -47,20 +47,20 @@ class TPQueue {
     }
     return items[HEAD++];
   }
-  
+
   T& front() {
     assert(count > 0);
     return items[HEAD];
   }
-  
+
   bool isEmpty() const {
     return counter == 0;
   }
-  
+
   bool isFull() const {
     return counter == MAXsize;
   }
-  
+
   ~TPQueue() {
     delete[] items;
   }
